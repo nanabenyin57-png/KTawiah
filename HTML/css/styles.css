@@ -1,158 +1,231 @@
-
-* {
+/*A KTawiah Deign*/ 
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body {
-  background-image: url("../img/bbg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 100vh;
+:root {
+  --primary-color: #a0d6da;
+  --primary-glow: rgba(160, 214, 218, 0.65);
+  --text-main: #ffffff;
+  --text-muted: #e1e8e9de;
+  --bg-overlay: rgba(0, 0, 0, 0.7);
+  --card-bg: rgba(15, 23, 42, 0.65);
+  --border-color: rgba(160, 214, 218, 0.25);
+  --header-height: 80px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: var(--bg-overlay) url("../img/bbg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-blend-mode: overlay;
+  color: var(--text-main);
+  min-height: 100vh;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
 
 .title {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  font-size: clamp(1.8rem, 4vw, 3rem); /* Fluid font size */
-  font-weight: 700;
-  color: #a0d6daa6;
-  background-color: rgb(0, 0, 0);
-  text-align: center;
   position: fixed;
-  width: 100%;
   top: 0;
   left: 0;
+  width: 100%;
+  height: var(--header-height);
+  padding: 0 1.5rem;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-color);
+  font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 0.5px;
   z-index: 1000;
-  padding: 10px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+}
+
+.title-text {
+  flex-grow: 1;
+  text-align: center;
+  padding: 0 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  border: 2px solid rgba(0, 0, 0, 0.6);
+  border: 2px solid var(--primary-color);
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.logo:hover {
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+/* Hamburger Button & Menu Container */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.hamburger-button {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.hamburger-button:hover {
+  background-color: rgba(160, 214, 218, 0.15);
+  border-color: var(--primary-color);
+}
+
+.hamburger {
+  position: absolute;
+  top: var(--header-height);
+  right: 1.5rem;
+  width: min(420 90vw);
+  background-color: rgba(10, 15, 25, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  z-index: 999;
 }
 
 header {
-  min-height: 50vh;
-  padding: 120px 20px 40px; /* Top padding clears fixed navbar */
+  min-height: 60vh;
+  padding: calc(var(--header-height) + 40px) 1.5rem 60px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  background-image: url("../img/hbg.jpg");
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)),
+              url("../img/hbg.jpg") no-repeat center center;
   background-size: cover;
-  background-position: center;
 }
 
-
 h1, h2 {
-  font-size: clamp(2.5rem, 8vw, 7rem); /* Scales smoothly from mobile to desktop */
-  font-weight: 700;
-  color: #fff;
-  text-align: center;
-  margin-top: 10px;
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-weight: 800;
+  color: var(--text-main);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  letter-spacing: -0.5px;
 }
 
 .motto {
-  font-size: clamp(1.2rem, 3vw, 2.2rem);
-  font-weight: 500;
-  color: #fff;
-  text-align: center;
-  margin-top: 20px; 
+  font-size: clamp(1rem, 2.2vw, 1.5rem);
+  font-weight: 400;
+  color: var(--primary-color);
+  margin-top: 1.5rem;
+  max-width: 750px;
 }
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 
 .services {
-  display: flex;
-  flex-direction: column; 
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 1.5rem;
 }
 
-.web, .app, .consult {
+
+.web, .app, .consult, .service-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #a0d6daa6;
+  justify-content: space-between;
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2.5rem 1.5rem;
   text-align: center;
-  width: 100%;
-  max-width: 400px;
- min-height: 300px;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
+  transition: var(--transition);
 }
 
-.app-img {
-  width: auto;
-  max-height: 160px;
-  object-fit: contain;
+.web:hover, .app:hover, .consult:hover, .service-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-color);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 15px var(--primary-glow);
 }
 
-.web-img {
+.web-img, .app-img, .consult-img {
   width: auto;
-  max-height: 160px;
+  height: 120px;
+  max-width: 100%;
   object-fit: contain;
-}
-
-.consult-img {
-  width: auto;
-  max-height: 160px;
-  object-fit: contain;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
 }
 
 .description {
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  font-weight: 500;
-  color: #e1e8e9de;
-  text-align: center;
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  color: var(--text-muted);
+  line-height: 1.6;
 }
 
-/* Footer */
 footer {
-  min-height: 80px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  margin-top: 20px;
+  gap: 1rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 1.5rem;
+  margin-top: 4rem;
 }
 
-/* Tablet & Desktop Layouts */
-@media (min-width: 768px) {
-  .services {
-    flex-direction: row; 
-    flex-wrap: wrap;
-  }
+.mail, .whatsapp {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  object-fit: cover;
+}
 
-  .web, .app, .consult {
-    flex: 1 1 300px; 
+.mail:hover, .whatsapp:hover {
+  transform: scale(1.15);
+  border-color: var(--primary-color);
+}
+
+
+@media (min-width: 768px) {
+  :root {
+    --header-height: 90px;
   }
 
   .logo {
-    width: 80px;
-    height: 80px;
+    width: 58px;
+    height: 58px;
+  }
+
+  .hamburger-button {
+    width: 50px;
+    height: 50px;
   }
 }
