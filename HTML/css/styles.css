@@ -1,51 +1,25 @@
 
-.logo {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 2px solid rgba(0,0,0,0.6);
-  top: 0;
-  left: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-header {
-  min-height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  min-width: 100%;
-  background-image: url("../img/hbg.jpg");
-}
-img {
-  width: 30%;
-  height: 15%;
-}
-h1,h2 {
-  font-size: 10rem;
-  font-weight: 700;
-  color: #fff;
-  text-align: center;
-  margin-top: 20px;
-}
-.motto {
-  font-size: 3rem;
-  font-weight: 500;
-  color: #fff;
-  text-align: center;
-  margin-top: 180px;
-}
+
 body {
   background-image: url("../img/bbg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  min-height: 100vh;
 }
+
+
 .title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1.8rem, 4vw, 3rem); /* Fluid font size */
   font-weight: 700;
   color: #a0d6daa6;
   background-color: rgb(0, 0, 0);
@@ -54,87 +28,131 @@ body {
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 1000;
+  padding: 10px;
   border-bottom: 2px solid rgba(0, 0, 0, 0.6);
 }
 
-
-.services{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.6);
 }
 
-.web{
+header {
+  min-height: 50vh;
+  padding: 120px 20px 40px; /* Top padding clears fixed navbar */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-image: url("../img/hbg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+h1, h2 {
+  font-size: clamp(2.5rem, 8vw, 7rem); /* Scales smoothly from mobile to desktop */
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.motto {
+  font-size: clamp(1.2rem, 3vw, 2.2rem);
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  margin-top: 20px; 
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.services {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+.web, .app, .consult {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: #a0d6daa6;
   text-align: center;
+  width: 100%;
   max-width: 400px;
-  max-height: fit-content;
-  margin-left: 20px;
-  margin-right: 20px;
-  bottom: 0;
-  left: 0;
+ min-height: 300px;
+  padding: 20px;
   background-color: rgba(0, 0, 0, 0.5);
-}
-.app{
-      display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  font-weight: 500;
-  color: #a0d6daa6;
-  text-align: center;
-  max-width: 400px;
-  max-height: fit-content;
-  margin-left: 20px;
-  margin-right: 20px;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.app-img{
-    width:auto;
-    height: 160px;
+  border-radius: 8px;
 }
 
-.consult{
-      display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  font-weight: 500;
-  color: #a0d6daa6;
-  text-align: center;
-  max-width: 400px;
-  margin-left: 20px;
-  margin-right: 20px;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+.app-img {
+  width: auto;
+  max-height: 160px;
+  object-fit: contain;
 }
 
+.web-img {
+  width: auto;
+  max-height: 160px;
+  object-fit: contain;
+}
+
+.consult-img {
+  width: auto;
+  max-height: 160px;
+  object-fit: contain;
+}
+
+.description {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 500;
+  color: #e1e8e9de;
+  text-align: center;
+}
+
+/* Footer */
 footer {
-  min-height: 100px;
+  min-height: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 100%;
-  background-color: rgba(0,0,0,0.6);
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
   margin-top: 20px;
 }
 
-.description{
-    font-size: 2rem;
-    font-weight: 500;
-    color: #e1e8e9de;
-    text-align: center; 
+/* Tablet & Desktop Layouts */
+@media (min-width: 768px) {
+  .services {
+    flex-direction: row; 
+    flex-wrap: wrap;
+  }
+
+  .web, .app, .consult {
+    flex: 1 1 300px; 
+  }
+
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
 }
