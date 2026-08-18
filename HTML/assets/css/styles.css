@@ -89,15 +89,15 @@ a:hover {
 }
 
 .name {
-  margin-right: 480px;
+  margin-right: clamp(1rem, 15vw, 400px); /* Replaced rigid 400px with dynamic scaling */
 }
 
 .contact-info {
-  font-size: clamp(1.2rem, 2vw, 3rem);
+  font-size: clamp(1rem, 2vw, 1.8rem); /* Capped max size so header content fits on screen */
   color: #f5f5dc;
 }
 
-/* Hero Header Section */
+
 header {
   min-height: 60vh;
   padding: calc(var(--header-height) + 2rem) clamp(1rem, 5vw, 3rem) 3rem;
@@ -140,7 +140,7 @@ h2 {
   width: 100%;
 }
 
-/* Services Grid Layout */
+
 .services {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(clamp(250px, 30vw, 320px), 1fr));
@@ -229,7 +229,7 @@ footer {
   }
   
   .name {
-    margin-right: 0;
+    margin-right: 10px;
   }
 
   footer {
