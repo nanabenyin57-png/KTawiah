@@ -74,44 +74,17 @@ body {
   box-shadow: 0 0 10px var(--primary-glow);
 }
 
-
-nav {
-  display: flex;
-  align-items: center;
+.name{
+margin-right: 480px;
 }
 
-.hamburger-button {
-  width: 46px;
-  height: 46px;
-  border-radius: 10px;
-  border: 1px solid var(--border-color);
-  background-color: rgba(255, 255, 255, 0.05);
-  color: var(--primary-color);
-  font-size: 1.5rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
+.contact-info{
+  font-size: 2.5rem;
+  color:beige;
 }
-
-.hamburger-button:hover {
-  background-color: rgba(160, 214, 218, 0.15);
-  border-color: var(--primary-color);
-}
-
-.hamburger {
-  position: absolute;
-  top: var(--header-height);
-  right: 1.5rem;
-  width: min(420 90vw);
-  background-color: rgba(10, 15, 25, 0.95);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-  z-index: 999;
+a{
+    font-size: 2.5rem;
+  color: #e1e8e9de;
 }
 
 header {
