@@ -135,6 +135,10 @@ h2{
   padding: 60px 1.5rem;
 }
 
+section{
+  padding:20px;
+}
+
 
 .web, .app, .consult, .service-card {
   display: flex;
