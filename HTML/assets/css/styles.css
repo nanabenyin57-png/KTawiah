@@ -34,7 +34,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Base Link Styling */
+
 a {
   font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--text-muted);
@@ -46,7 +46,7 @@ a:hover {
   color: var(--primary-color);
 }
 
-/* Header & Navigation Bar */
+
 .title {
   display: flex;
   justify-content: space-between;
@@ -88,14 +88,12 @@ a:hover {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Dynamic Flex Positioning (Replaced fixed margin-right: 480px) */
 .name {
-  margin-right: auto;
-  padding-left: 1rem;
+  margin-right: 480px;
 }
 
 .contact-info {
-  font-size: clamp(0.9rem, 1.8vw, 1.25rem);
+  font-size: clamp(1.2rem, 2vw, 3rem);
   color: #f5f5dc;
 }
 
