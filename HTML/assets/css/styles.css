@@ -63,7 +63,6 @@ a:hover {
   font-size: clamp(1rem, 2vw, 1.5rem);
   font-weight: 700;
   color: var(--primary-color);
-  letter-spacing: 0.5px;
   z-index: 1000;
 }
 
@@ -89,11 +88,11 @@ a:hover {
 }
 
 .name {
-  margin-right: clamp(1rem, 15vw, 400px); /* Replaced rigid 400px with dynamic scaling */
+  margin-right: clamp(2rem, 20vw, 600px); 
 }
 
 .contact-info {
-  font-size: clamp(1rem, 2vw, 1.8rem); /* Capped max size so header content fits on screen */
+  font-size: clamp(1rem, 2vw, 1.8rem); 
   color: #f5f5dc;
 }
 
